@@ -16,3 +16,7 @@
 .leftToRight:hover::after {
   width: 100%;
 }
+
+.footerHover:hover {
+  color: white;
+}
