@@ -1,0 +1,18 @@
+.leftToRight {
+  position: relative;
+  display: inline-flex;
+}
+.leftToRight::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background: #ffd641;
+  transition: all 0.3s ease-in-out;
+}
+.leftToRight:hover::after {
+  width: 100%;
+}
