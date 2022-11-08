@@ -1,8 +1,15 @@
 
 import CountUp from 'react-countup';
 import { FaEthereum, FaSortNumericDownAlt, FaSortNumericUpAlt } from 'react-icons/fa';
+import { alertService } from '../services';
 
 export default function Stats() {
+    const options = {
+        autoClose: true,
+        keepAfterRouteChange: false
+    }
+
+    alertService.info("hahah111", options);
     return (
         <div className="stats shadow w-7/12">
             <div className="stat">

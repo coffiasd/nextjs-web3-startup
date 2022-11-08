@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Footer from '../components/Footer';
 import dynamic from 'next/dynamic';
 import React from "react";
+import { Alert } from '../components/alert.jsx';
+import Stats from '../components/Stats';
 
 const Header = dynamic(() => import('../components/Header'), {
   ssr: false,
@@ -17,7 +19,12 @@ export default function Home() {
       </Head>
       <Header />
 
+      <Alert />
+
       <div className='min-h-screen'>
+        <div className='hero m-20'>
+          <Stats />
+        </div>
 
       </div>
       <Footer />

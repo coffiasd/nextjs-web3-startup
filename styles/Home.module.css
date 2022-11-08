@@ -1,6 +1,8 @@
 .leftToRight {
   position: relative;
   display: inline-flex;
+  font-size: 0.8rem;
+  margin-top: 6px;
 }
 .leftToRight::after {
   content: "";
