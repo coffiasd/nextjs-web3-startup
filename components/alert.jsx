@@ -119,13 +119,13 @@ function Alert({ id, fade }) {
     <div>
       {alerts.map((alert, index) => (
         <div
-          className="alert alert-warning shadow-lg z-50 fixed m-auto w-auto flex justify-center"
+          className="alert alert-warning shadow-lg z-50 mt-5 fixed w-1/4 h-14 flex justify-center toast toast-center toast-top"
           key={index}
         >
-          <div>
+          <div className="alert alert-warning">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="stroke-current flex-shrink-0 h-6 w-6"
+              className="stroke-current shrink-0 h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
             >
@@ -136,13 +136,13 @@ function Alert({ id, fade }) {
                 d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
               />
             </svg>
-            <span dangerouslySetInnerHTML={{ __html: alert.message }}></span>
+            <span>{alert.message}</span>
+            <FaWindowClose
+              size="1.2rem"
+              onClick={() => removeAlert(alert)}
+              className="float-right"
+            />
           </div>
-          <FaWindowClose
-            size="1rem"
-            onClick={() => removeAlert(alert)}
-            className="float-right"
-          />
         </div>
       ))}
     </div>

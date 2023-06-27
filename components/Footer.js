@@ -1,8 +1,28 @@
 import styles from '../styles/Home.module.css';
+import Image from 'next/image';
 
 export default function Footer() {
+
+    const addNetwork = async () => {
+        await ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+                {
+                    "chainId": "0x1389",
+                    "chainName": "Mantle Testnet",
+                    "rpcUrls": ["https://rpc.testnet.mantle.xyz"],
+                    "nativeCurrency": {
+                        "name": "BIT",
+                        "symbol": "BIT",
+                        "decimals": 18
+                    }
+                }
+            ]
+        });
+    }
+
     return (
-        <footer className="footer p-10 bg-base-300 text-base-content">
+        <footer className="footer p-10 bg-slate-300 text-base-content">
             <div>
                 <span className="footer-title text-black">Services</span>
                 <a className={styles.footerHover}>BRAND</a>
@@ -16,6 +36,13 @@ export default function Footer() {
                 <a className={styles.footerHover}>Contact</a>
                 <a className={styles.footerHover}>Jobs</a>
                 <a className={styles.footerHover}>Press kit</a>
+            </div>
+            <div>
+                <span className="footer-title text-black">Wellet</span>
+                <div className='flex flex-row cursor-pointer' onClick={addNetwork}>
+                    <div className='my-auto'><Image src="/mm.svg" width={30} height={30} /></div>
+                    <div className='my-auto'>Add MetaMask Testnet</div>
+                </div>
             </div>
             <div>
                 <span className="footer-title">Social</span>

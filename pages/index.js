@@ -30,15 +30,15 @@ export default function Home() {
             <p className="py-6 text-xl font-normal leading-normal mt-0 mb-2">Digital-ticket-stream is a platform that allows users to create paid live streaming channels. Users can create their own NFTs on the platform or import an existing NFT to charge custom fees to viewers</p>
           </div>
 
-          <div class="flex flex-col gap-6 mt-20">
-            <div class="not-prose grid grid-cols-3 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-              <a class="card card-compact hover:bg-base-400 transition-all duration-400 hover:-translate-y-1" href=""><figure class="px-4 pt-4"><FaPlusSquare size="6rem" /></figure> <div class="card-body"><h2 class="text-center text-lg font-bold">Create Room</h2></div></a>
+          <div className="flex flex-col gap-6 mt-20">
+            <div className="not-prose grid grid-cols-3 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+              <a className="card card-compact hover:bg-base-400 transition-all duration-400 hover:-translate-y-1" href=""><figure className="px-4 pt-4"><FaPlusSquare size="6rem" /></figure> <div className="card-body"><h2 className="text-center text-lg font-bold">Create Room</h2></div></a>
 
-              <a class="card card-compact hover:bg-base-400 transition-all duration-400 hover:-translate-y-1" href=""><figure class="px-4 pt-4"><FaBell size="6rem" /></figure> <div class="card-body"><h2 class="text-center text-lg font-bold">Send Notifications</h2> </div></a>
+              <a className="card card-compact hover:bg-base-400 transition-all duration-400 hover:-translate-y-1" href=""><figure className="px-4 pt-4"><FaBell size="6rem" /></figure> <div className="card-body"><h2 className="text-center text-lg font-bold">Send Notifications</h2> </div></a>
 
-              <a class="card card-compact hover:bg-base-400 transition-all duration-400 hover:-translate-y-1" href=""><figure class="px-4 pt-4"><FaDollarSign size="6rem" /></figure> <div class="card-body"><h2 class="text-center text-lg font-bold">Withdraw Fees</h2> </div></a>
+              <a className="card card-compact hover:bg-base-400 transition-all duration-400 hover:-translate-y-1" href=""><figure className="px-4 pt-4"><FaDollarSign size="6rem" /></figure> <div className="card-body"><h2 className="text-center text-lg font-bold">Withdraw Fees</h2> </div></a>
 
-              <a class="card card-compact hover:bg-base-400 transition-all duration-400 hover:-translate-y-1" href=""><figure class="px-4 pt-4"><FaHeadphonesAlt size="6rem" /></figure> <div class="card-body"><h2 class="text-center text-lg font-bold">Join Lobby</h2> </div></a>
+              <a className="card card-compact hover:bg-base-400 transition-all duration-400 hover:-translate-y-1" href=""><figure className="px-4 pt-4"><FaHeadphonesAlt size="6rem" /></figure> <div className="card-body"><h2 className="text-center text-lg font-bold">Join Lobby</h2> </div></a>
 
 
             </div>
