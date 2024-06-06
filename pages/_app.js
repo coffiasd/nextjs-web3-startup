@@ -1,38 +1,72 @@
 import '../styles/globals.css'
 //wagmi.
-import { WagmiConfig, createClient, configureChains, defaultChains } from 'wagmi'
-import { publicProvider } from 'wagmi/providers/public';
+import { http, createConfig, WagmiProvider } from 'wagmi'
 //rainbow kit UI framework.
 import '@rainbow-me/rainbowkit/styles.css';
 import '../styles/Home.module.css';
+import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 
 import {
   getDefaultWallets,
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
+import {
+  mainnet,
+  sepolia,
+  optimism,
+  arbitrum,
+  base,
+  bsc,
+  scroll,
+  blast
+} from 'wagmi/chains';
+import {
+  QueryClientProvider,
+  QueryClient,
+} from "@tanstack/react-query";
 
-const { chains, provider } = configureChains(defaultChains, [publicProvider()])
+const Local = {
+  id: 31337,
+  name: 'Local',
+  network: 'Local',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'ETH',
+    symbol: 'ETH',
+  },
+  rpcUrls: {
+    public: {
+      http: ['https://127.0.0.1:8545']
+    },
+    default: {
+      http: ['https://127.0.0.1:8545']
+    },
+  },
+  testnet: true,
+}
 
-const { connectors } = getDefaultWallets({
+const queryClient = new QueryClient();
+
+const chains = [Local, sepolia];
+
+const config = getDefaultConfig({
   appName: 'My RainbowKit App',
-  chains
+  projectId: 'xx',
+  chains: chains,
+  ssr: true,
 });
 
-const client = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
-})
 
 function MyApp({ Component, pageProps }) {
   return (
-    <WagmiConfig client={client}>
-      <RainbowKitProvider chains={chains}>
-        <Component {...pageProps} />
-      </RainbowKitProvider>
-    </WagmiConfig>
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider>
+          <Component {...pageProps} />
+        </RainbowKitProvider>
+      </QueryClientProvider>
+    </WagmiProvider>
   )
-
 }
 
 export default MyApp
